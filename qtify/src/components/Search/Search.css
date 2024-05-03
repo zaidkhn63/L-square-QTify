@@ -1,0 +1,21 @@
+.searchwrapper {
+    display: flex;
+  }
+  .search {
+    width: 502px;
+    border: 1px solid var(--black-color);
+    height: 48px;
+    border-radius: 8px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 14px 20px;
+  }
+  .search-icon {
+    border-radius: 0px 8px 8px 0px;
+    height: 48px;
+    border: 1px solid var(--black-color);
+    border-left: none;
+    padding: 6px 14px;
+    cursor: pointer;
+  }
+  
