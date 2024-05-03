@@ -10,9 +10,7 @@ const NewAlbums = () => {
 
   const fetchNewAlbums = async () => {
     try {
-      const res = await axios.get(
-        "https://qtify-backend-labs.crio.do/albums/new"
-      );
+      const res = await axios.get("https://qtify-backend-labs.crio.do/albums/new");
       setData(res.data);
     } catch (error) {
       console.log(error);
@@ -24,7 +22,7 @@ const NewAlbums = () => {
   }, []);
 
   const handleToggle = () => {
-    setToggle(!toggle);
+    setToggle(!toggle); // Toggle the 'toggle' state between true and false
   };
 
   return (
@@ -32,21 +30,21 @@ const NewAlbums = () => {
       <div className="new-header">
         <h3>New Albums</h3>
         <h3 className="new-toggletext" onClick={handleToggle}>
-          {toggle ? "Show All" : "Collapse"}
+          {toggle ? "Collapse" : "Show All"}
         </h3>
       </div>
       <div className="newalbums-wrapper">
-        {!toggle ? (
+        {toggle ? (
+          <Carousel
+            data={data}
+            renderCardComponent={(item) => <Card data={item} type="album" key={item.id} />}
+          />
+        ) : (
           <div className="new-albums">
             {data.map((item) => (
               <Card data={item} type="album" key={item.id} />
             ))}
           </div>
-        ) : (
-          <Carousel
-            data={data}
-            renderCardComponent={(item) => <Card data={item} type="album" />}
-          />
         )}
       </div>
     </div>
