@@ -32,22 +32,22 @@ const TopAlbums = () => {
       <div className="top-header">
         <h3>Top Albums</h3>
         <h3 className="toggletext" onClick={handleToggle}>
-          {toggle ? "Show All" : "Collapse"}
+          {toggle ? "Collapse" : "Show All"}
         </h3>
       </div>
       <div className="topalbum-wrapper">
         {!toggle ? (
+          <Carousel
+            data={data}
+            renderCardComponent={(item) => <Card data={item} type="album" />}
+          />
+        ):(
           <div className="top-albums">
             {data.map((item) => (
               <Card data={item} type="album" key={item.id} />
             ))}
           </div>
-        ) : (
-          <Carousel
-            data={data}
-            renderCardComponent={(item) => <Card data={item} type="album" />}
-          />
-        )}
+        ) }
       </div>
     </div>
   );
