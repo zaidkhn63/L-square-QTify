@@ -34,18 +34,18 @@ const NewAlbums = () => {
         </h3>
       </div>
       <div className="newalbums-wrapper">
-        {toggle ? (
+        {!toggle ?  (
           <Carousel
             data={data}
             renderCardComponent={(item) => <Card data={item} type="album" key={item.id} />}
           />
-        ) : (
+        ):(
           <div className="new-albums">
             {data.map((item) => (
               <Card data={item} type="album" key={item.id} />
             ))}
           </div>
-        )}
+        ) }
       </div>
     </div>
   );
