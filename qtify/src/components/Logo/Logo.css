@@ -1,0 +1,13 @@
+/* Logo.css */
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    padding-left: 20px; /* Add space to the left of the logo */
+  }
+  
+  .logo-img {
+    width: 67px;
+    height: auto; /* Maintain aspect ratio */
+  }
+  

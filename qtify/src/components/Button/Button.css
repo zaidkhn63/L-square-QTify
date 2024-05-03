@@ -1,17 +1,27 @@
+/* Button.css */
+
 .button {
-    background-color: var(--black-color);
-    color: var(--primary-color);
-    border: 1px;
-    border-radius: 5px;
-    padding: 10px, 16px, 10px, 16px;
-    width: 170px;
-    height: 47px;
-    gap: 10px;
-    font-family: poppins;
-    font-size: 18px;
-    text-align: center;
-    font-weight: 600;
-    line-height: 27px;
-    letter-spacing: 0.25px;
-  }
-  
+  background-color: var(--black-color);
+  color: var(--primary-color);
+  border: 1px solid transparent; /* Specify solid border */
+  border-radius: 5px;
+  padding: 10px 16px; /* Use correct syntax for padding */
+  width: 170px;
+  height: 47px;
+  font-family: 'Poppins', sans-serif; /* Specify the correct font family */
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.25px;
+  cursor: pointer; /* Ensure cursor changes to pointer on hover */
+}
+
+.button:hover {
+  border-color: var(--primary-color); /* Change border color on hover */
+}
+
+/* Optional: Add transition for smooth hover effect */
+.button {
+  transition: border-color 0.3s ease;
+}
